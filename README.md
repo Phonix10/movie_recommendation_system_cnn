@@ -8,8 +8,33 @@ This project implements a *movie recommendation system* using *Convolutional Neu
 - Trained CNN model to extract image embeddings
 - Cosine similarity-based recommendation engine
 - Simple UI built with Streamlit
+- Content-based movie recommendation using CNN
+- Built using TensorFlow and Keras
 
-## 📁 Project Structure
+## 📁 Project Structure
+
+```
+.idea/
+└── inspectionProfiles/
+    └── profiles_settings.xml
+.gitignore
+misc.xml
+modules.xml
+movie_recommendation_system_cnn.iml
+model/
+    ├── emotion-detection.ipynb
+    ├── model.json
+    └── new_model.h5
+.gitattributes
+haarcascade_frontalface_default.xml
+main.py
+mode.ipynb
+model_new.h5
+model_weights.h5
+model.json
+README.md
+testing.py
+```
 
 ## ⚙ How It Works
 
@@ -18,9 +43,28 @@ This project implements a *movie recommendation system* using *Convolutional Neu
 3. *Calculate cosine similarity* between feature vectors to find similar movies.
 4. *Streamlit app* allows users to interact and view recommended movies.
 
-## 🚀 Getting Started
+## 🧪 Requirements
+- Python 3.7+
+- TensorFlow
+- NumPy
+- pandas
+- scikit-learn
+- matplotlib
+- Streamlit
 
-### 1. Install Dependencies
+## 📚 Dataset
+### The dataset includes:
+- MovieGenre.csv: Movie titles and genre information
+- Movie poster images in the images/ directory
+- These are used to train the CNN and build the recommendation engine.
 
-bash
-pip install -r requirements.txt
+## 📈 Future Improvements
+- Incorporate NLP on movie descriptions
+- Combine content-based and collaborative filtering
+- Enhance UI with better interactivity and visuals
+
+## 👨‍💻 Author
+Developed by Udit Ranjan And Prabhav Rathi.
+
+## 🙌 Credits
+This project was developed for learning and experimentation with deep learning in the domain of content-based recommendations.

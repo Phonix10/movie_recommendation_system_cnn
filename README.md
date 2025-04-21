@@ -36,6 +36,50 @@ README.md
 testing.py
 ```
 
+# 😊 Bonus Project: Facial Expression Recognition using CNN
+
+In addition to the movie recommendation system, this repository includes a CNN-based **Facial Expression Recognition** model trained to classify human emotions such as **happy**, **angry**, **sad**, etc., using grayscale facial images.
+
+## 🔍 Overview
+
+- Input image size: 48x48 pixels (grayscale)
+- Dataset: Images categorized by facial expressions (`happy`, `angry`, etc.)
+- Data pipeline using `ImageDataGenerator`
+- Deep CNN architecture with 5 convolutional layers
+- Trained for 45 epochs with categorical cross-entropy loss
+- Model saved as JSON (`model.json`) and weights as HDF5 (`new_model.h5`)
+
+## 🧠 Model Architecture
+
+- **Input Shape**: 48x48x1 (grayscale images)
+- **Conv Layers**: 5 convolutional layers each followed by BatchNormalization, ReLU activation, MaxPooling, and Dropout
+- **Dense Layers**:
+  - Fully Connected Layer 1: 256 neurons
+  - Fully Connected Layer 2: 512 neurons
+  - Output Layer: 7 neurons with softmax activation (for 7 emotion classes)
+
+## 🏗️ Training Procedure
+
+```python
+# Load and preprocess image data
+ImageDataGenerator().flow_from_directory()
+
+# Build CNN model
+Sequential([
+    Conv2D(...) → BatchNorm → ReLU → MaxPooling → Dropout,
+    ...
+    Flatten(),
+    Dense(...) → BatchNorm → ReLU → Dropout,
+    Dense(...) → BatchNorm → ReLU → Dropout,
+    Dense(7, activation='softmax')
+])
+
+
+# Compile and train
+model.compile(optimizer=Adam(lr=0.0001), loss='categorical_crossentropy', metrics=['accuracy'])
+model.fit_generator(...)
+```
+
 ## ⚙ How It Works
 
 1. *Train a CNN* to learn visual features from movie poster images.

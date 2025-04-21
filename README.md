@@ -79,13 +79,13 @@ Sequential([
 model.compile(optimizer=Adam(lr=0.0001), loss='categorical_crossentropy', metrics=['accuracy'])
 model.fit_generator(...)
 ```
-# 🎥 Real-Time Facial Emotion Detection using CNN and OpenCV
+## 🎥 Real-Time Facial Emotion Detection using CNN and OpenCV
 
 This section of the project demonstrates a **real-time facial emotion recognition system** using your computer’s webcam and a CNN model trained on grayscale facial images.
 
 ---
 
-## 🧠 Model: Emotion Classifier
+### 🧠 Model: Emotion Classifier
 
 - **Model Source**: `model.json` and `new_model.h5` (previously trained and saved)
 - **Input**: Grayscale 48x48 pixel face images
@@ -103,32 +103,34 @@ This section of the project demonstrates a **real-time facial emotion recognitio
 | 6           | Surprise  |
 ---
 
-## 📸 Real-Time Webcam Detection
+### 📸 Real-Time Webcam Detection
 
 This module uses **OpenCV** to capture webcam frames, detect faces, and classify their emotion using the trained model.
 
-### 📦 Key Libraries
+#### 📦 Key Libraries
 - `cv2`: OpenCV for computer vision tasks
 - `keras.models.model_from_json`: For loading the saved model architecture
 - `numpy`: For image matrix manipulation
 
 ---
 
-## ⚙️ How It Works
+### ⚙️ How It Works
 1. *Train a CNN* to learn visual features from movie poster images.
 2. *Extract feature vectors* and save them using numpy.
 3. *Calculate cosine similarity* between feature vectors to find similar movies.
 4. *Streamlit app* allows users to interact and view recommended movies.
 
+## 1. Load the saved CNN model from JSON
 ```python
-# 1. Load the saved CNN model from JSON
 model = model_from_json(open("model.json").read())
 model.load_weights("new_model.h5")
+```
 
-# 2. Start webcam
+## 2. Start webcam
+```
 cap = cv2.VideoCapture(0)
 ```
-# 3. For each frame:
+## 3. For each frame:
    - Convert to grayscale
    - Detect faces using Haar Cascade
     - Preprocess face ROI (resize to 48x48)

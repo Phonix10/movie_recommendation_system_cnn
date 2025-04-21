@@ -36,7 +36,7 @@ README.md
 testing.py
 ```
 
-## 😊 Bonus Project: Facial Expression Recognition using CNN
+## Facial Expression Recognition using CNN
 
 In addition to the movie recommendation system, this repository includes a CNN-based **Facial Expression Recognition** model trained to classify human emotions such as **happy**, **angry**, **sad**, etc., using grayscale facial images.
 
